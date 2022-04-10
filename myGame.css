@@ -56,7 +56,7 @@
   padding: 20px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* On smaller screens, where width is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-width: 600px) {
   .sidebar {
        padding-top: 70px;
@@ -177,11 +177,11 @@ img{
 #gen, #gen2{
 	background-color: green;
 	color: white;
-	width: 110px;
+	width: 100px;
 	height: 30px;
 	margin-bottom: 10px;
 	border-radius: 6px;
-	margin-left: 60px;
+	margin-left: 50px;
 	cursor: pointer;
 }
 
