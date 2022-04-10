@@ -1,0 +1,374 @@
+
+.sidebar {
+  height: 19%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: ;
+  left: 10.5%;
+  display: grid;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 100px; /* Place content 60px from the top */
+  transition: .5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+
+/* Position and style the close button (top right corner) */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 1px;
+  font-size: 36px;
+  margin-left: 0px;
+  padding-right: 20px;
+  color: red;
+}
+
+.closebtn:hover{
+	color: mediumvioletred;
+
+}
+
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 15px;
+  cursor: pointer;
+  background-color: purple;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  margin-left: -12px;
+
+}
+
+.openbtn:hover {
+  color: white;
+  background-color: blue;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-width: 600px) {
+  .sidebar {
+       padding-top: 70px;
+       left: 10px;
+       top: 10px;
+       height: 30%;
+       transition: .5;
+  }
+  
+}
+
+
+
+
+#what{
+	text-align: center;
+	background-color: blue;
+	color: white;
+	font-size: 20px;
+	border-radius: 10px;
+	font-family: monospace;
+	margin-left: 40%;
+	text-transform: capitalize;
+	margin-top: 20px;
+	height: 60px;
+}
+
+
+#num, #num3{
+	background-color: black;
+	height: 30px;
+	width: 20px;
+	text-align: center;
+	color: white;
+}
+#num1, #num2, #num4{
+     font-size: 35px;
+     background-color: ;
+}
+#num, #num3{
+	width: auto;
+}
+#num3{
+	padding-bottom: 20px;
+	padding-top: 10px;
+} 
+
+#dGame{
+	margin-top: 3px;
+	text-align: center;
+}
+#dGame2, #dGame3, #dGame4{
+	text-align: center;
+	color: white;
+	background-color: ;
+	width: auto;
+}
+
+
+#main-container{
+	margin: auto;
+	margin-top: 5%;
+	background-color: darkgreen;
+	width: 80%;
+	height: auto;
+}
+
+
+@media screen and (max-width: 600px) {
+  #main-container{
+    width: 100%;
+    height: ;
+    margin: 0;
+    position: ;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #what{
+     margin-top: ;
+	margin-left: 33%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+  }
+}
+
+#gen-div{
+	margin-top: 6%;
+	display: flex;
+	background-color: lawngreen;
+}
+
+img{
+	margin: auto;
+	width: 8%;
+	height: ;
+	margin-left: 10px;
+}
+
+#gen-div1{
+	margin: auto;
+	width: 50%;
+	background-color: ;
+	display: grid;
+}
+
+#gen-div2{
+	margin: auto;
+	width: 50%;
+	background-color: ;
+	display: grid;
+}
+
+#ll, #ll2{
+	display: flex;
+}
+
+#gen, #gen2{
+	background-color: green;
+	color: white;
+	width: 110px;
+	height: 30px;
+	margin-bottom: 10px;
+	border-radius: 6px;
+	margin-left: 60px;
+	cursor: pointer;
+}
+
+#gen-why{
+	background-color: hotpink;
+	color: white;
+	height: 28px;
+	border-radius: 5px;
+	margin-left: 30px;
+	cursor: pointer;
+     margin-right: 8px;
+}
+
+#gen-why:hover{
+	color: blue;
+}
+
+@media screen and (max-width: 600px) {
+	#gen-why{
+	background-color: hotpink;
+	color: white;
+	height: 28px;
+	border-radius: 5px;
+	margin-left: 12px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+  #gen, #gen2{
+    width: 90px;
+    margin-left: 0px;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+
+#dgen, #dgen2{
+	background-color: red;
+	color: white;
+	width: 90px;
+	height: 30px;
+	border-radius: 6px;
+	margin-left: 6px;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  #dgen, #dgen2{
+    width: 57px;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+}
+
+#gen-area1, #gen-area2{
+	margin-top: 2%;
+	margin-bottom: 3%;
+	margin-left: 10px;
+	background-color: greenyellow;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+#txt, #txt2{
+	width: 98%;
+	margin-left: 5px;
+	margin-bottom: 10px;
+	background-color: ;
+}
+
+#inp, #inp2{
+	width: 55%;
+}
+
+@media screen and (max-width: 600px) {
+  #inp, #inp2{
+    width: 112px;
+  }
+}
+
+
+#save-btn, #save-btn2{
+	background-color: blue;
+	color: white;
+	width: 30%;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+#save-btn, #save-btn2{
+	width: auto;
+}
+}
+
+
+#dft, #dft2{
+	padding-right: ;
+	color: midnightblue;
+}
+
+@media screen and (max-width: 600px) {
+	#dft, #dft2{
+	padding-right: 35px;
+}
+}
+
+#finalP{
+	text-align: center;
+	background-color: yellow;
+	margin-left: 30%;
+	width: 40%;
+	margin-top: 15px;
+	border-bottom: 6px solid darkgray;
+	border-top: 2px solid blue;
+	border-left: 2px solid purple;
+	padding-bottom: 8px;
+	padding-top: 8px;
+	font-size: 20px;
+	font-weight: bolder;
+	color: darkblue;
+	font-family: serif;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#save-el, #save-el2{
+	margin-left: ;
+	color: midnightblue;
+	padding-right: 35px;
+}
+
+#final2{
+	color: white;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+#action-area, #action-area2{
+	display: flex;
+	margin-left: 5px;
+	margin-top: ;
+	border: 2px solid goldenrod;
+	padding-top: 10px;
+	padding-left: 10px;
+	margin-right: 32px;
+	box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+	#action-area, #action-area2{
+		display: grid;
+		padding-right: 8px;
+	}
+}
+
+
+#totalVal, #totalVal2{
+	width: 50px;
+	height: 30px;
+}
+
+#inpVal, #inpVal2{
+	width: 50px;
+	margin-left: 3px;
+	height: 24px;
+}
+
+@media screen and (max-width: 600px) {
+	#inpVal, #inpVal2{
+		width: 50%;
+	}
+}
+
+#action-input, #action-input2{
+	display: flex;
+}
+
+#win{
+     display: ;
+}
+
+.ftr3{
+		color: white;
+		border-radius: 2px;
+		text-align: center;
+		background-color: ;
+		font-size: small;
+	}
