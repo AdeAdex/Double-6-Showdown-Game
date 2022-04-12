@@ -96,7 +96,6 @@
            animation-name: flash;
            animation-duration: 0.8s;
            animation-iteration-count: infinite;
-           width: 100%;
            word-wrap: break-word;
          }
 
