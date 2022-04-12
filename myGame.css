@@ -84,6 +84,23 @@
 	height: 60px;
 }
 
+@keyframes flash {
+            0%, 50%, 100% {
+               opacity: 1;
+            }
+            25%, 75% {
+               opacity: 0;
+            }
+         }
+         #what{
+           animation-name: flash;
+           animation-duration: 0.8s;
+           animation-iteration-count: infinite;
+           width: 100%;
+           word-wrap: break-word;
+         }
+
+
 
 #num, #num3{
 	background-color: black;
