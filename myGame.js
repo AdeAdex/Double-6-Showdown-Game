@@ -25,8 +25,8 @@ function playLudo() {
 		alert("Hey! save your count times or time of clicked as " + counter + " before the next player start to click ")
         document.getElementById("num1").style.color = "green";
         document.getElementById("num2").style.color = "green";
-        document.getElementById("num1").style.backgroundColor = "blue";
-        document.getElementById("num2").style.backgroundColor = "blue";
+        document.getElementById("num1").style.backgroundColor = "white";
+        document.getElementById("num2").style.backgroundColor = "white";
 		counter = 0;
     } else if (document.getElementById("num1").innerHTML <= 6 && document.getElementById("num2").innerHTML <= 6) {
         document.getElementById("num3").innerHTML = "Continue rolling the dies"
