@@ -6,74 +6,88 @@
 	<title>ADEX</title>
 	<link rel="stylesheet" type="text/css" href="myGame.css">
 	<link href="fontawesome/css/all.css" rel="stylesheet">
-	<script type="text/javascript" src="myGame.js"></script>
 </head>
 <body>
 
 	<div id="main-container">
-			<div id="mySidebar" class="sidebar">
-		  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <button id="gen-why" onclick="changeName()">Change Name</button>
-		  		<button id="gen-why" onclick="whyClick()">Help</button>
-		  		<button id="gen-why" onclick="aboutUs()">About</button>
-		  		<button id="gen-why" onclick="resignIt()">Resign</button>
-		  		<button id="gen-why" onclick="closeMe()">Exit</button>
-			</div>
+		<div id="mySidebar" class="sidebar">
+	  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <button id="dropdown-btn" onclick="changeName()">Change Name</button>
+	  		<button id="dropdown-btn" onclick="whyClick()">Help</button>
+	  		<button id="dropdown-btn" onclick="aboutUs()">About</button>
+	  		<button id="dropdown-btn" onclick="resignIt()">Resign</button>
+	  		<button id="dropdown-btn" onclick="closeMe()">Exit</button>
+		</div>
 
-			<div id="main">
-  				<button class="openbtn" onclick="openNav()">&#9776;</button>
+		<div id="openBtnContainer">
+				<button class="openbtn" onclick="openNav()">&#9776;</button>
+		</div>
+		<div class="display-area">
+			<button id="displayTxt1"></button>
+			<div class="dice-output">
+				<button id="output1"></button>
+				<button id="andSymbol">&</button>
+				<button id="output2"></button>
 			</div>
-		<p id="dGame"><button id="num"></button></p>
-		<p id="dGame3"><button id="num1"></button><button id="num4">&</button><button id="num2"></button></p>
-		<p id="dGame4"><button id="num3"></button></p>
-		<p id="dGame2">0</p>
-		<button id="what" onclick="playLudo()">click to play</button> 
-		<div id="gen-div">
-			<div id="gen-div1">
-				<div id="txt">
-					<p id="dft"></p>
-					<p id="save-el">:</p>
-					<input type="text" name="" id="inp" placeholder="Enter time of clicked and then save">
-					<button id="save-btn" onclick="save()">Save</button>
+			<button id="displayTxt2"></button>
+			<div id="displayTxt3">0</div>
+		</div>
+		<button id="playbtn" onclick="playLudo()">click to play</button> 
+		
+		
+		<div id="main">
+			<div id="padArea1">
+				<div id="inputArea">
+					<div id="playerName1"></div>
+					<div id="save-el">:</div>
+					<div class="input-area-div">
+						<input type="tel" name="" id="input1" placeholder="Enter time of clicked and then save">
+						<button id="save-btn" onclick="save()">Save</button>
+					</div>
 				</div>
-			<div id="action-area">
-				<!--<img src="ade.png" width="10%" height="10%" id="genimg">!-->
-				<!--<div id="gen-area1"></div>!-->
-				<div id="action-input">
-					<button id="totalVal">0</button>
-					<input type="text" name="" id="inpVal">
-				</div>
-				<div id="ll">
-					<button id="gen" onclick="generate()">Generate</button>
-					<button id="dgen" onclick="degenerate()">Reset</button>
-				</div>
-			</div>
-			</div>
-			<div id="gen-div2">
-				<div id="txt2">
-					<p id="dft2"></p>
-					<p id="save-el2">:</p>
-					<input type="text" name="" id="inp2" placeholder="Enter time of clicked and then save">
-					<button id="save-btn2" onclick="save2()">Save</button>
-				</div>
-			<div id="action-area2">
-				<!--<img src="adeadex.png" width="10%" height="10%" id="genimg">!-->
-				<!--<div id="gen-area2"></div>!-->
-				<div id="action-input2">
-					<button id="totalVal2">0</button>
-					<input type="text" name="" id="inpVal2">
-				</div>
-				<div id="ll2">
-					<button id="gen2" onclick="generate2()">Generate</button>
-					<button id="dgen2" onclick="degenerate2()">Reset</button>
+				<div id="action-area">
+					<!--<img src="ade.png" width="10%" height="10%" id="genimg">!-->
+					<!--<div id="gen-area1"></div>!-->
+					<div id="action-input">
+						<button id="totalVal">0</button>
+						<input type="text" name="" id="inpVal">
+					</div>
+					<div id="generateContainer">
+						<button id="gen" onclick="generate()">Generate</button>
+						<button id="dgen" onclick="degenerate()">Reset</button>
+					</div>
 				</div>
 			</div>
+			<div id="padArea2">
+				<div id="inputArea2">
+					<div id="playerName2"></div>
+					<div id="save-el2">:</div>
+					<div class="input-area-div">
+						<input type="tel" name="" id="input2" placeholder="Enter time of clicked and then save">
+						<button id="save-btn2" onclick="save2()">Save</button>
+					</div>
+				</div>
+				<div id="action-area2">
+					<!--<img src="adeadex.png" width="10%" height="10%" id="genimg">!-->
+					<!--<div id="gen-area2"></div>!-->
+					<div id="action-input2">
+						<button id="totalVal2">0</button>
+						<input type="text" name="" id="inpVal2">
+					</div>
+					<div id="generateContainer">
+						<button id="gen2" onclick="generate2()">Generate</button>
+						<button id="dgen2" onclick="degenerate2()">Reset</button>
+					</div>
+				</div>
 			</div>
 		</div>
 		<button id="finalP" onclick="who()">Winner</button>
-		<p id="final2"></p>
-		<!--<img src="adeadex.png" id="win">!-->
-		<div class="ftr3"><i class="fas fa-copyright"><sup> 2022</sup></i> Adex. &nbsp; All Right Reserved &nbsp; <i class="fas fa-cog fa-spin"></i></div>
+		<div class="congrat"><div id="final2"></div><img src="pic\congrats2.gif" id="win" width="50px" height="30px"></div>
+		
+		<div class="ftr"><i class="fas fa-copyright"><sup> 2022</sup></i> Adex. &nbsp; All Right Reserved &nbsp; <i class="fas fa-cog fa-spin"></i></div>
 	</div>
+
+
+	<script type="text/javascript" src="myGame.js"></script>
 </body>
 </html>
