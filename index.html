@@ -10,6 +10,7 @@
 <body>
 
 	<div id="main-container">
+		<button class="openbtn" id="openBtn" onclick="openNav()">&#9776;</button>
 		<div id="mySidebar" class="sidebar">
 	  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <button id="dropdown-btn" onclick="changeName()">Change Name</button>
@@ -19,9 +20,7 @@
 	  		<button id="dropdown-btn" onclick="closeMe()">Exit</button>
 		</div>
 
-		<div id="openBtnContainer">
-				<button class="openbtn" onclick="openNav()">&#9776;</button>
-		</div>
+		
 		<div class="display-area">
 			<button id="displayTxt1"></button>
 			<div class="dice-output">
@@ -32,7 +31,7 @@
 			<button id="displayTxt2"></button>
 			<div id="displayTxt3">0</div>
 		</div>
-		<button id="playbtn" onclick="playLudo()">click to play</button> 
+		<button id="playbtn">click to play</button> 
 		
 		
 		<div id="main">
@@ -81,11 +80,14 @@
 				</div>
 			</div>
 		</div>
-		<button id="finalP" onclick="who()">Winner</button>
-		<div class="congrat"><div id="final2"></div><img src="congrats2.gif" id="win" width="50px" height="30px"></div>
+	</div>
+
+	<footer id="footer">
+		<button id="finalbtn">Winner</button>
+		<div class="congratmsg"><div id="congratTxt"></div><img src="pic\congrats2.gif" id="congratImg" width="50px" height="30px"></div>
 		
 		<div class="ftr"><i class="fas fa-copyright"><sup> 2022</sup></i> Adex. &nbsp; All Right Reserved &nbsp; <i class="fas fa-cog fa-spin"></i></div>
-	</div>
+	</footer>
 
 
 	<script type="text/javascript" src="myGame.js"></script>
