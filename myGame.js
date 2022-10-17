@@ -133,15 +133,15 @@ function whoWin() {
     if (totalValue1.innerHTML < totalValue2.innerHTML) {
         displayCongratMsg.innerHTML = "Congratulation! " + firstPlayer + " is the winner" ;
         congratImage.style.display = "block";
-        gif.style.backgroundImage = "url('congrats3.gif')";
+        gif.style.backgroundImage = "url('pic/congrats3.gif')";
     } else if (totalValue1.innerHTML == totalValue2.innerHTML) {
          displayCongratMsg.innerHTML = "No one is the winner, you both have the same scores, play the game for atleast one more time to decide the winner";
          congratImage.style.display = "none";
-         gif.style.backgroundImage = "url(congrats33.gif)";
+         gif.style.backgroundImage = "url(pic/congrats33.gif)";
     } else{
          displayCongratMsg.innerHTML = "Congratulation! " + secondPlayer + " is the winner";
         congratImage.style.display = "block";
-        gif.style.backgroundImage = "url('congrats3.gif')";
+        gif.style.backgroundImage = "url('pic/congrats3.gif')";
     }
 };
 
