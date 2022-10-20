@@ -1,13 +1,24 @@
+let player1 = document.getElementById("playerName1");
+let player2 = document.getElementById("playerName2");
+let firstPlayerName = document.getElementById("firstPlayerName");
+let secondPlayerName = document.getElementById("secondPlayerName");
+let firstPlayerPrompt = prompt("First player enter your name", "Adex");
+let secondPlayerPrompt = prompt("Second player enter your name", "Adeolu");
+
+firstPlayerName.innerHTML = firstPlayerPrompt;  secondPlayerName.innerHTML = secondPlayerPrompt;
+
+
 function playerName() {
-    let player1 = document.getElementById("playerName1");
-    let player2 = document.getElementById("playerName2");
-    if (firstPlayer != "" && secondPlayer != "") {
-        player1.innerHTML = firstPlayer + " " + "time of clicked for successful draw";
-        player2.innerHTML = secondPlayer + " " + "time of clicked for successful draw"
+    if (firstPlayerPrompt != "" && secondPlayerPrompt != "") {
+        player1.innerHTML = firstPlayerPrompt + " " + "time of clicked for successful draw";
+        player2.innerHTML = secondPlayerPrompt + " " + "time of clicked for successful draw"
     }else {
         player1.innerHTML = "Player1 " + "time of clicked for successful draw";
         player2.innerHTML = "Player2 " + "time of clicked for successful draw";
     }
+
+    if (firstPlayerPrompt == "" || null) {firstPlayerPrompt = "Player1"};
+    if (secondPlayerPrompt == "" || null) {secondPlayerPrompt = "Player2"};
 };window.onload = playerName;
 
 
@@ -35,11 +46,6 @@ function closeNav() {
 
 
 
-
-let firstPlayer = prompt("First player enter your name", "Adex")
-let secondPlayer = prompt("Second player enter your name", "Adeolu")
-if (firstPlayer == "" || null) {firstPlayer = "Player1"};
-if (secondPlayer == "" || null) {secondPlayer = "Player2"};
 
 let counter = 0;
 let count = 0;
@@ -131,7 +137,7 @@ let gif = document.getElementById("footer");
 winner.addEventListener("click", whoWin);
 function whoWin() {
     if (totalValue1.innerHTML < totalValue2.innerHTML) {
-        displayCongratMsg.innerHTML = "Congratulation! " + firstPlayer + " is the winner" ;
+        displayCongratMsg.innerHTML = "Congratulation! " + firstPlayerName.innerHTML + " is the winner, " + secondPlayerName.innerHTML + " lost this time" ;
         congratImage.style.display = "block";
         gif.style.backgroundImage = "url('pic/congrats3.gif')";
     } else if (totalValue1.innerHTML == totalValue2.innerHTML) {
@@ -139,7 +145,7 @@ function whoWin() {
          congratImage.style.display = "none";
          gif.style.backgroundImage = "url(pic/congrats33.gif)";
     } else{
-         displayCongratMsg.innerHTML = "Congratulation! " + secondPlayer + " is the winner";
+         displayCongratMsg.innerHTML = "Congratulation! " + secondPlayerName.innerHTML + " is the winner, " + firstPlayerName.innerHTML + " lost woefully to " + secondPlayerName.innerHTML ;
         congratImage.style.display = "block";
         gif.style.backgroundImage = "url('pic/congrats3.gif')";
     }
@@ -153,12 +159,22 @@ function whyClick() {
 
 
 function changeName() {
-    firstPlayer = prompt("Whats your new name player1");
-    secondPlayer = prompt("Whats your new name player2") 
+    newfirstPlayerName = prompt("Do you really want to change your name from, "  + firstPlayerName.innerHTML + " to another name? What's your new name as player1");
+    newsecondPlayerName = prompt("Do you really want to change your name from, " + secondPlayerName.innerHTML + " to another name? Whats your new name as player2");
+    firstPlayerName.innerHTML = newfirstPlayerName;  secondPlayerName.innerHTML = newsecondPlayerName;
+    if (newfirstPlayerName != ""  && newsecondPlayerName != "") {
+         player1.innerHTML = newfirstPlayerName + " " + "time of clicked for successful draw";
+         player2.innerHTML = newsecondPlayerName + " " + "time of clicked for successful draw";
+    } if (newfirstPlayerName == null || newsecondPlayerName == null) {
+        firstPlayerName.innerHTML = firstPlayerPrompt//"player1";
+        secondPlayerName.innerHTML = secondPlayerPrompt//"player2";
+        player1.innerHTML = firstPlayerName.innerHTML + " " + "time of clicked for successful draw";
+        player2.innerHTML = secondPlayerName.innerHTML + " " + "time of clicked for successful draw";
+    }
 };
 
 
 function aboutUs() {
-    alert("This game is designed and developed by Amole Adeolu. The game was developed in year 2022 by Adex. \n If you want to assist and encourage us, you can reach us @adeoluamole@gmail.com or at +2347033959586 ")
+    alert("This game is designed and developed by Amole Adeolu. The game was developed in year 2022 by Adex. \n If you want to assist and encourage me, you can reach me @adeoluamole@gmail.com or at +2347033959586 ")
 };
 
