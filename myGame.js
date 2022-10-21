@@ -57,6 +57,9 @@ function playLudo() {
     const secondOutput = document.querySelector("#output2");
     let fstDisplayTxt = document.getElementById("displayTxt1");
     let scdDisplayTxt = document.getElementById("displayTxt2");
+    congratImage.style.display = "none";
+    gif.style.backgroundImage = "url(pic/congrats33.gif)";
+    displayCongratMsg.innerHTML = "";
     firstOutput.innerHTML = Math.floor(Math.random() * 6) + 1;
     secondOutput.innerHTML = Math.floor(Math.random() * 6) + 1;
     if (firstOutput.innerHTML >= 6 && secondOutput.innerHTML >= 6) {
