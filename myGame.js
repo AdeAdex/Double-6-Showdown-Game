@@ -135,22 +135,35 @@ let winner = document.getElementById("finalbtn");
 let totalValue1 = document.getElementById("totalVal");
 let totalValue2 = document.getElementById("totalVal2");
 let congratImage = document.getElementById("congratImg");
-let displayCongratMsg = document.querySelector("#congratTxt")
+let displayCongratMsg = document.querySelector("#congratTxt");
+let counterincrease = 0;
+let counterincrease2 = 0;
 let gif = document.getElementById("footer");
 winner.addEventListener("click", whoWin);
 function whoWin() {
+    let firstcounter = document.getElementById("firstCount");
+    let secondcounter = document.getElementById("secondCount");
     if (totalValue1.innerHTML < totalValue2.innerHTML) {
         displayCongratMsg.innerHTML = "Congratulation! " + firstPlayerName.innerHTML + " is the winner, " + secondPlayerName.innerHTML + " lost this time" ;
         congratImage.style.display = "block";
         gif.style.backgroundImage = "url('pic/congrats3.gif')";
+        counterincrease+= 1;
+        firstcounter.innerHTML = counterincrease;
     } else if (totalValue1.innerHTML == totalValue2.innerHTML) {
          displayCongratMsg.innerHTML = "No one is the winner, you both have the same scores, play the game for atleast one more time to decide the winner";
          congratImage.style.display = "none";
          gif.style.backgroundImage = "url(pic/congrats33.gif)";
+         counterincrease+= 0;
+         counterincrease2+= 0;
+         firstcounter.innerHTML = counterincrease;
+         secondcounter.innerHTML = counterincrease2;
+         
     } else{
          displayCongratMsg.innerHTML = "Congratulation! " + secondPlayerName.innerHTML + " is the winner, " + firstPlayerName.innerHTML + " lost woefully to " + secondPlayerName.innerHTML ;
-        congratImage.style.display = "block";
-        gif.style.backgroundImage = "url('pic/congrats3.gif')";
+         congratImage.style.display = "block";
+         gif.style.backgroundImage = "url('pic/congrats3.gif')";
+         counterincrease2+= 1;
+         secondcounter.innerHTML = counterincrease2;
     }
 };
 
@@ -169,8 +182,16 @@ function changeName() {
          player1.innerHTML = newfirstPlayerName + " " + "time of clicked for successful draw";
          player2.innerHTML = newsecondPlayerName + " " + "time of clicked for successful draw";
     } if (newfirstPlayerName == null || newsecondPlayerName == null) {
-        firstPlayerName.innerHTML = firstPlayerPrompt//"player1";
-        secondPlayerName.innerHTML = secondPlayerPrompt//"player2";
+        firstPlayerName.innerHTML = "player1"//firstPlayerPrompt//"player1";
+        secondPlayerName.innerHTML = "player2"//secondPlayerPrompt//"player2";
+        confirm("Since you cancel and decided not to input any name, your name has been Reset back to default. \nIf you really want to change your name, kindly re-click 'Change Name' button and input your new name. Thanks")
+        player1.innerHTML = firstPlayerName.innerHTML + " " + "time of clicked for successful draw";
+        player2.innerHTML = secondPlayerName.innerHTML + " " + "time of clicked for successful draw";
+    }
+    if (newfirstPlayerName == "" || newsecondPlayerName == "") {
+        firstPlayerName.innerHTML = "player1"//firstPlayerPrompt//"player1";
+        secondPlayerName.innerHTML = "player2"//secondPlayerPrompt//"player2";
+        confirm("The name space can not be empty and since you decided not to input any name, your name has been Reset back to default. \nIf you really want to change your name, kindly re-click 'Change Name' button and input your new name. Thanks")
         player1.innerHTML = firstPlayerName.innerHTML + " " + "time of clicked for successful draw";
         player2.innerHTML = secondPlayerName.innerHTML + " " + "time of clicked for successful draw";
     }
