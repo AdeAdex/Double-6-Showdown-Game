@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="myGame.css">
 	<link href="fontawesome/css/all.css" rel="stylesheet">
 </head>
-<body>
+<body onload="loading()">
 
 	<div id="main-container">
 		<button class="openbtn" id="openBtn" onclick="openNav()">&#9776;</button>
@@ -32,6 +32,7 @@
 			<div id="displayTxt3">0</div>
 		</div>
 		<button id="playbtn">click to play</button> 
+		<button id="demo"></button>
 		
 		
 		<div id="main">
@@ -39,14 +40,13 @@
 				<div id="inputArea">
 					<div id="playerName1"></div>
 					<div id="save-el">:</div>
+					<div id="inputArray"></div>
 					<div class="input-area-div">
 						<input type="tel" name="" id="input1" placeholder="Enter time of clicked and then save">
 						<button id="save-btn" onclick="save()">Save</button>
 					</div>
 				</div>
 				<div id="action-area">
-					<!--<img src="ade.png" width="10%" height="10%" id="genimg">!-->
-					<!--<div id="gen-area1"></div>!-->
 					<div id="action-input">
 						<button id="totalVal">0</button>
 						<input type="text" name="" id="inpVal">
@@ -61,14 +61,13 @@
 				<div id="inputArea2">
 					<div id="playerName2"></div>
 					<div id="save-el2">:</div>
+					<div id="inputArray2"></div>
 					<div class="input-area-div">
 						<input type="tel" name="" id="input2" placeholder="Enter time of clicked and then save">
 						<button id="save-btn2" onclick="save2()">Save</button>
 					</div>
 				</div>
 				<div id="action-area2">
-					<!--<img src="adeadex.png" width="10%" height="10%" id="genimg">!-->
-					<!--<div id="gen-area2"></div>!-->
 					<div id="action-input2">
 						<button id="totalVal2">0</button>
 						<input type="text" name="" id="inpVal2">
