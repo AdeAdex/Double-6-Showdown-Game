@@ -19,7 +19,26 @@ function playerName() {
 
     if (firstPlayerPrompt == "" || null) {firstPlayerPrompt = "Player1"};
     if (secondPlayerPrompt == "" || null) {secondPlayerPrompt = "Player2"};
-};window.onload = playerName;
+}window.onload = playerName;
+
+
+
+
+
+/*let waitingTime = setTimeout(5000){
+    function loading() {
+        document.getElementById("main-container").innerHTML = null;//"Please wait, the game is loading";
+    }
+};*/
+
+
+
+
+
+
+
+
+
 
 
 
@@ -49,20 +68,23 @@ function closeNav() {
 
 let counter = 0;
 let count = 0;
+const firstOutput = document.querySelector("#output1");
+const secondOutput = document.querySelector("#output2");
+let fstDisplayTxt = document.getElementById("displayTxt1");
+let scdDisplayTxt = document.getElementById("displayTxt2");
+let check = document.getElementById("demo");
 const play = document.getElementById("playbtn");
 play.addEventListener("click", playLudo);
 function playLudo() {
     counter+= 1;
-    const firstOutput = document.querySelector("#output1");
-    const secondOutput = document.querySelector("#output2");
-    let fstDisplayTxt = document.getElementById("displayTxt1");
-    let scdDisplayTxt = document.getElementById("displayTxt2");
+    let sound = new Audio("Notification.wav");
     congratImage.style.display = "none";
     gif.style.backgroundImage = "url(pic/congrats33.gif)";
     displayCongratMsg.innerHTML = "";
     firstOutput.innerHTML = Math.floor(Math.random() * 6) + 1;
     secondOutput.innerHTML = Math.floor(Math.random() * 6) + 1;
-    if (firstOutput.innerHTML >= 6 && secondOutput.innerHTML >= 6) {
+    check.innerHTML = counter;
+    if (firstOutput.innerHTML == 6 && secondOutput.innerHTML == 6) {
         scdDisplayTxt.innerHTML = " You've successfully found double 6 after clicking in " + counter + " times";
         let display = " Your output is ";
         fstDisplayTxt.innerHTML =  display;
@@ -71,8 +93,9 @@ function playLudo() {
         secondOutput.style.color = "blue";
         firstOutput.style.backgroundColor = "white";
         secondOutput.style.backgroundColor = "white";
-		counter = 0;
-    } else if (firstOutput.innerHTML <= 6 && secondOutput.innerHTML <= 6) {
+        sound.play();
+        counter = 0;
+    } else {
         scdDisplayTxt.innerHTML = "Continue rolling the dies";
         display = " Your clicked output is ";
         fstDisplayTxt.innerHTML = display;
@@ -81,53 +104,92 @@ function playLudo() {
         firstOutput.style.backgroundColor = "black";
         secondOutput.style.backgroundColor = "black";
     }
-    else {
-        alert("Continue rolling the dies")
-    }
+ 
  document.getElementById("displayTxt3").textContent = "You Just Clicked " + counter + " Times";
 };
 
 
+let myinput = [];
+document.getElementById("inputArray").innerHTML = myinput;
+let input1 = document.getElementById("input1");
 function save() {
-    let saveEl = document.getElementById("save-el"); // previous element:
-    let countStr = document.getElementById("input1").value + " - "; //anything input  + -  eg 2 -
-    saveEl.textContent = saveEl.textContent + " " + countStr; // previous element + countStr    e.g  5 - 2 -
+    if (firstOutput.innerHTML != 6 && secondOutput.innerHTML != 6 ) {
+        alert("You've not gotten anything to save. \nPlay the game untill you found double 6 \nThanks")
+    } else if (input1.value != check.innerHTML) {
+        alert("Kindly please check what you are inputting and makesure that your total number of click for a successful draw is the same as what your are inputting\nYour input should be:\n\n" + check.innerHTML )
+
+    } else {
+        let saveEl = document.getElementById("save-el"); // previous element:
+        let countStr = input1.value + " - "; //anything input  + -  eg 2 -
+        saveEl.textContent = saveEl.textContent + " " + countStr; // previous element + countStr    e.g  5 - 2 -
+        
+
+        let newinput = document.getElementById("input1").value;
+        myinput[myinput.length] = newinput;
+        document.getElementById("inputArray").innerHTML = myinput;
+    }
+    return input1.value = null;
  };
 
 
+
+
+let myinput2 = [];
+document.getElementById("inputArray2").innerHTML = myinput2;
+let input2 = document.getElementById("input2");
  function save2() {
-    let saveEl2 = document.getElementById("save-el2"); // previous element:
-    let countStr2 = document.getElementById("input2").value + " - "; //anything input  + -  eg 2 -
-    saveEl2.textContent = saveEl2.textContent + " " + countStr2; // previous element + countStr    e.g  5 - 2 -
+    if (firstOutput.innerHTML != 6 && secondOutput.innerHTML != 6 ) {
+        alert("You've not gotten anything to save. \nPlay the game untill you found double 6 \nThanks")
+    } else if (input2.value != check.innerHTML) {
+        alert("Kindly please check what you are inputting and makesure that your total number of click for a successful draw is the same as what your are inputting\nYour input should be:\n\n" + check.innerHTML )
+
+    } else {
+        let saveEl2 = document.getElementById("save-el2"); // previous element:
+        let countStr2 = input2.value + " - "; //anything input  + -  eg 2 -
+        saveEl2.textContent = saveEl2.textContent + " " + countStr2; // previous element + countStr    e.g  5 - 2 -
+
+        let newinput2 = document.getElementById("input2").value;
+        myinput2[myinput2.length] = newinput2;
+        document.getElementById("inputArray2").innerHTML = myinput2;
+    }
+     return input2.value = null;
  };
 
 
  function generate() {
-   /*let image = document.createElement("img");
-   image.src = "ade.png";
-    let div = document.getElementById("gen-area1");
-    div.appendChild(image);*/
-    document.getElementById("totalVal").innerHTML = parseInt(document.getElementById("totalVal").innerHTML) + parseInt(document.getElementById("inpVal").value);
-    document.getElementById("inpVal").value = count;
- };
+    let geninputval = document.getElementById("inpVal");
+    if(myinput.includes(geninputval.value)){
+        totalValue1.innerHTML = parseInt(totalValue1.innerHTML) + parseInt(geninputval.value);
+        geninputval.value = count;
+    } else if (myinput == "") {
+        alert("You've not gotten anything on your 'time of clicked for successful draw' Play the game and input your time of clicked there and then come back to generate some value here")
+    }
+    else{
+        alert("Kindly please check the values in your 'time of clicked for successful draw' and makesure what you are inputting match a value there\n" + "Your values in your 'time of clicked for successful draw' are:\n" + myinput);
+    }
+};
 
 
 function degenerate() {
-     document.getElementById("totalVal").innerHTML = count;
+    totalValue1.innerHTML = count;
 };
 
 function generate2() {
-   /*let image = document.createElement("img");
-   image.src = "adeadex.png";
-    let div = document.getElementById("gen-area2");
-    div.appendChild(image);*/
-    document.getElementById("totalVal2").innerHTML = parseInt(document.getElementById("totalVal2").innerHTML) + parseInt(document.getElementById("inpVal2").value);
-    document.getElementById("inpVal2").value = count;
+    let geninputval2 = document.getElementById("inpVal2");
+    if(myinput2.includes(geninputval2.value)){
+        totalValue2.innerHTML = parseInt(totalValue2.innerHTML) + parseInt(geninputval2.value);
+        geninputval2.value = count;
+    } else if (myinput2 == "") {
+        alert("You've not gotten anything on your 'time of clicked for successful draw' Play the game and input your time of clicked there and then come back to generate some value here")
+    }
+    else{
+        alert("Kindly please check the values in your 'time of clicked for successful draw' and makesure what you are inputting match a value there\n" + "Your values in your 'time of clicked for successful draw' are:\n" + myinput2);
+    }
  };
 
 
 function degenerate2() {
-     document.getElementById("totalVal2").innerHTML = count;
+    totalValue2.innerHTML = count;
 };
 
 
@@ -156,14 +218,17 @@ function whoWin() {
          counterincrease+= 0;
          counterincrease2+= 0;
          firstcounter.innerHTML = counterincrease;
-         secondcounter.innerHTML = counterincrease2;
-         
+         secondcounter.innerHTML = counterincrease2;  
     } else{
          displayCongratMsg.innerHTML = "Congratulation! " + secondPlayerName.innerHTML + " is the winner, " + firstPlayerName.innerHTML + " lost woefully to " + secondPlayerName.innerHTML ;
          congratImage.style.display = "block";
          gif.style.backgroundImage = "url('pic/congrats3.gif')";
          counterincrease2+= 1;
          secondcounter.innerHTML = counterincrease2;
+    }
+
+    if (firstcounter.innerHTML <= 0 && secondcounter.innerHTML <= 0) {
+        alert("Winner can not be decided untill you generate users numbers of click.\nClick the 'Click To Play' button to play and get the required values")
     }
 };
 
