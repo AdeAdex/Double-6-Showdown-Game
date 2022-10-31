@@ -8,6 +8,7 @@ body {
 	margin: 0;
 	padding: 5px;
 	height: 100vh;
+	background-image: url('pic/border2.png');
 }
 
 #main-container{
