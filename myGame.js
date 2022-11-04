@@ -66,6 +66,8 @@ function closeNav() {
 
 
 
+
+
 let counter = 0;
 let count = 0;
 const firstOutput = document.querySelector("#output1");
@@ -93,7 +95,7 @@ function playLudo() {
         secondOutput.style.color = "blue";
         firstOutput.style.backgroundColor = "white";
         secondOutput.style.backgroundColor = "white";
-        sound.play();
+        //sound.play();
         counter = 0;
     } else {
         scdDisplayTxt.innerHTML = "Continue rolling the dies";
@@ -104,6 +106,12 @@ function playLudo() {
         firstOutput.style.backgroundColor = "black";
         secondOutput.style.backgroundColor = "black";
     }
+
+    /*if ((scdDisplayTxt.innerHTML === " You've successfully found double 6 after clicking in " + counter + " times") && (myinput.includes(check.innerHTML) == false)) {
+        play.disabled = true;
+    } else if ((scdDisplayTxt.innerHTML === " You've successfully found double 6 after clicking in " + counter + " times") && (myinput.includes(check.innerHTML) == true)) {
+        play.disabled = false;
+    }*/
  
  document.getElementById("displayTxt3").textContent = "You Just Clicked " + counter + " Times";
 };
@@ -113,7 +121,7 @@ let myinput = [];
 document.getElementById("inputArray").innerHTML = myinput;
 let input1 = document.getElementById("input1");
 function save() {
-    if (firstOutput.innerHTML != 6 && secondOutput.innerHTML != 6 ) {
+    if ((firstOutput.innerHTML != 6) || (secondOutput.innerHTML != 6)) {
         alert("You've not gotten anything to save. \nPlay the game untill you found double 6 \nThanks")
     } else if (input1.value != check.innerHTML) {
         alert("Kindly please check what you are inputting and makesure that your total number of click for a successful draw is the same as what your are inputting\nYour input should be:\n\n" + check.innerHTML )
@@ -138,7 +146,7 @@ let myinput2 = [];
 document.getElementById("inputArray2").innerHTML = myinput2;
 let input2 = document.getElementById("input2");
  function save2() {
-    if (firstOutput.innerHTML != 6 && secondOutput.innerHTML != 6 ) {
+    if ((firstOutput.innerHTML != 6) || (secondOutput.innerHTML != 6 )) {
         alert("You've not gotten anything to save. \nPlay the game untill you found double 6 \nThanks")
     } else if (input2.value != check.innerHTML) {
         alert("Kindly please check what you are inputting and makesure that your total number of click for a successful draw is the same as what your are inputting\nYour input should be:\n\n" + check.innerHTML )
@@ -228,12 +236,12 @@ function whoWin() {
     }
 
     if (firstcounter.innerHTML <= 0 && secondcounter.innerHTML <= 0) {
-        alert("Winner can not be decided untill you generate users numbers of click.\nClick the 'Click To Play' button to play and get the required values")
+        alert("Winner can not be decided untill you generate user numbers of click.\nClick the 'Click To Play' button to play and get the required values")
     }
 };
 
 function whyClick() {
-    alert("The save button is used to save each of your time of clicked or click time for a successful draw and they are entered into the space provided at the side of the save button.\n\nThe generate button is used to Input each digit from your time of clicked and for every digit you enter, click the Genearte button to decide the winner and once you are done inputing them, click the Winner button to see the winner. \n\nNote: The Reset button is used to clear the generated value")
+    alert("The save button is used to save each of your time of clicked or click time for a successful draw and they are entered into the space provided at the side of the save button.\n\nThe generate button is used to Input each digit from your time of clicked, and for every digit you enter, click the Genearte button to decide the winner and once you are done inputing them, click the Winner button to see the winner. \n\nNote: The Reset button is used to clear the generated value")
 }
 
 
