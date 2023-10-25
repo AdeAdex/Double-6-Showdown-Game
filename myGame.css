@@ -410,6 +410,13 @@ footer {
   width: 100%;
 }
 
+@media screen and (max-width: 600px) {
+  #firstPlayerName,
+  #secondPlayerName {
+    font-size: 12px !important;
+  }
+}
+
 .name-count {
   display: flex;
 }
