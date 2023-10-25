@@ -180,6 +180,13 @@ body {
   color: midnightblue;
 }
 
+@media screen and (max-width: 600px) {
+  #playerName1,
+  #playerName2 {
+    font-size: 12px !important;
+  }
+}
+
 #save-el,
 #save-el2 {
   color: midnightblue;
