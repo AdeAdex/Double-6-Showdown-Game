@@ -86,7 +86,6 @@ body {
   flex-direction: column;
   justify-content: center;
   height: 40%;
-  /* background-color: red; */
 }
 
 .dice-output {
